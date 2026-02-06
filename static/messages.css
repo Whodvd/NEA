@@ -166,3 +166,29 @@ section.messages img{
     float: none;
   }
 }
+
+
+.flash-wrap {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.flash {
+  background-color: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.flash.success {
+  background-color: #4CAF50;
+}
+
+.flash.error {
+  background-color: #f44336;
+}

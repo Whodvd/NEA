@@ -796,7 +796,7 @@ def current_class():
                 new_period -= 1  
             
             # Add success flash message
-            flash(f'Loaded {class_type.capitalize()} class: {class_name} (Period {period_num})', 'success')
+            flash(f'Loaded {class_type.capitalize()} class: {class_name} (Period {new_period})', 'success')
             
             return render_template("class.html", students=students_data, class_name=class_name, 
                                    class_type=class_type, teacher_name=teacher_name, teacher_id=teacher_id,

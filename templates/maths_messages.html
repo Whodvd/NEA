@@ -16,6 +16,17 @@
     <section class="messages">
         <h1>MATHS POSTS</h1>
 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-wrap">
+                {% for category, msg in messages %}
+                    <p class="flash {{ category }}">{{ msg }}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+
         {% for post in posts %}
             <a href="{{ url_for('view_post', board='maths', post_id=post[0]) }}">
                 <article class="post">
