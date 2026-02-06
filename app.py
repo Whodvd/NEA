@@ -1974,7 +1974,7 @@ def flag_student(student_id):
         subject_name = subject_result[0] if subject_result else "Unknown"
         
         # Create message text
-        message_text = f"{student_name} flagged for help in {subject_name}"
+        message_text = f"{student_name} flagged for Support in {subject_name}"
         message_title = f"⚠️ {subject_name} - Student Flag"
         
         # Determine which subject-specific table to insert into based on SubjectID
@@ -1997,7 +1997,6 @@ def flag_student(student_id):
         today = datetime.date.today()
         now = datetime.datetime.now().time()
         
-        # Insert flag message into the appropriate subject-specific message board table
         cursor.execute(f"""
             INSERT INTO {table_name} (Title, Content, Date, Time, TeacherID)
             VALUES (?, ?, ?, ?, ?)
@@ -2006,7 +2005,7 @@ def flag_student(student_id):
         connection.commit()
         connection.close()
         
-        return jsonify({'success': True, 'message': f'{student_name} has been flagged for help in {subject_name}'}), 200
+        return jsonify({'success': True, 'message': f'{student_name} has been flagged for Support in {subject_name}'}), 200
     
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
